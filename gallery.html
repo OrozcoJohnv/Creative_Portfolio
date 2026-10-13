@@ -12,30 +12,25 @@
             box-sizing: border-box;
         }
 
-        html {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            overflow-x: hidden;
-        }
-
-        html::-webkit-scrollbar,
-        body::-webkit-scrollbar {
-            display: none;
+        /* 1. LOCK VIEWPORT HEIGHT & BAN GLOBAL SCROLLING */
+        html,
+        body {
+            height: 100vh;
+            overflow: hidden;
         }
 
         body {
             font-family: Arial, sans-serif;
             background-color: #0b0d40;
             color: #141764;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
         }
 
         header {
             background-color: #141764;
             color: white;
+            flex-shrink: 0;
         }
 
         .top-header {
@@ -81,43 +76,60 @@
             background-color: #23299c;
         }
 
+        /* 2. FORCE MAIN CONTAINER TO STAY WITHIN THE REMAINDER OF WINDOW */
         main {
             flex: 1;
-            padding: 40px 3%;
+            padding: 15px 3%;
+            /* Reduced top/bottom padding */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
+        /* 3. CONVERT WHITE BOX TO FLEX TO MANAGE INTERIOR SPACE */
         .portfolio-container {
             background-color: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            padding: 60px 40px;
+            padding: 25px 40px;
+            /* Thinner padding to leave vertical space */
             text-align: center;
-
             width: 75%;
             max-width: 75%;
-            margin: 0 auto;
+            height: 100%;
+            /* Spans exactly inside main bounds */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .portfolio-container h1 {
-            font-size: 34px;
+            font-size: 30px;
+            /* Slightly scaled down text */
             color: #141764;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 15px;
             color: #5548a1;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+            /* Reduced bottom margin */
         }
 
+        /* 4. REDUCE GRID GAPS */
         .profiles-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 40px 20px;
+            gap: 15px 20px;
+            /* Shrunk vertical row gaps from 40px to 15px */
             justify-items: center;
+            align-content: center;
             width: 100%;
+            flex: 1;
         }
-
 
         .profile-card {
             display: flex;
@@ -126,18 +138,20 @@
             text-align: center;
         }
 
+        /* 5. SLIGHTLY REDUCE IMAGE BOUNDS TO PREVENT CLIPPING */
         .profile-card img {
-            width: 120px;
-            height: 120px;
+            width: 105px;
+            /* Shrunk from 120px to 105px so 3 rows safely fit 100vh */
+            height: 105px;
             object-fit: cover;
             border-radius: 50%;
             border: 3px solid #23299c;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             background-color: #ccc;
         }
 
         .profile-card span {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             color: #141764;
             text-transform: uppercase;
@@ -148,11 +162,21 @@
             background-color: #141764;
             color: white;
             text-align: center;
-            padding: 22px;
+            padding: 18px;
+            /* Slightly slimmer footer */
             font-size: 14px;
+            flex-shrink: 0;
         }
 
         @media (max-width: 700px) {
+
+            html,
+            body {
+                overflow: auto;
+                /* Re-allows scrolling ONLY on mobile screens */
+                height: auto;
+            }
+
             .brand {
                 font-size: 20px;
             }
@@ -164,10 +188,13 @@
 
             .portfolio-container {
                 padding: 30px 15px;
+                width: 95%;
+                max-width: 95%;
             }
 
             .profiles-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 25px 15px;
             }
 
             .profile-card img {
