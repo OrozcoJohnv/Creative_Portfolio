@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orozco Creatives</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overflow-x: hidden;
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0d40;
+            color: #141764;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #141764;
+            color: white;
+        }
+
+        .top-header {
+            height: 105px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            border-bottom: 1px solid #23299c;
+        }
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 3px solid #7452e8;
+            object-fit: cover;
+        }
+
+        .brand {
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 23px 45px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #23299c;
+        }
+
+        main {
+            flex: 1;
+            padding: 55px 2%;
+        }
+
+        /* WHITE BOX */
+        /* WHITE BOX */
+        .portfolio-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            padding: 100px 100px;
+            text-align: center;
+
+            /* CHANGE THESE TWO LINES */
+            width: 100%;
+            /* Stretches the box out completely */
+            max-width: 100%;
+            /* Removes any pixel or percentage caps */
+            margin: 0 auto;
+        }
+
+
+
+        .portfolio-container h1 {
+            font-size: 34px;
+            color: #141764;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #5548a1;
+            margin-bottom: 40px;
+        }
+
+        /* 4 x 3 grid = 12 pictures */
+        .profiles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px 20px;
+            justify-items: center;
+        }
+
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #23299c;
+            margin-bottom: 12px;
+            background-color: #ccc;
+        }
+
+        .profile-card span {
+            font-size: 13px;
+            font-weight: bold;
+            color: #141764;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        footer {
+            background-color: #141764;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .brand {
+                font-size: 20px;
+            }
+
+            nav a {
+                padding: 20px 12px;
+                font-size: 13px;
+            }
+
+            .portfolio-container {
+                padding: 30px 15px;
+            }
+
+            .profiles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .profile-card img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="top-header">
+            <img src="logo.png" class="logo" alt="Logo">
+            <div class="brand">OROZCO CREATIVES</div>
+        </div>
+
+        <nav>
+            <a href="index2.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="gallery.html" class="active">GALLERY</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portfolio-container">
+            <h1>Creative Portfolio</h1>
+            <p class="subtitle">A curated look at our latest collections and artistic ventures.</p>
+
+            <div class="profiles-grid">
+                <div class="profile-card"><img src="profile.jpg" alt="Project 01"><span>Project 01</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 02"><span>Project 02</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 03"><span>Project 03</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 04"><span>Project 04</span></div>
+
+                <div class="profile-card"><img src="profile.jpg" alt="Project 05"><span>Project 05</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 06"><span>Project 06</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 07"><span>Project 07</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 08"><span>Project 08</span></div>
+
+                <div class="profile-card"><img src="profile.jpg" alt="Project 09"><span>Project 09</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 10"><span>Project 10</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 11"><span>Project 11</span></div>
+                <div class="profile-card"><img src="profile.jpg" alt="Project 12"><span>Project 12</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Orozco Creatives
+    </footer>
+
+</body>
+
+</html>
